@@ -17,6 +17,10 @@ describe("deterministicPartitionKey", () => {
     const trivialKey = deterministicPartitionKey({data: "123"});
     expect(trivialKey).toBe("337bcbb974bfee05ef99dc5f04f2d48fc1f328ea5bc02dbdac01c12a0a1b8e02a7877efda0af22d54144d97ca549d2da772cae3db5c15771f9b64b22ea1a1ef3");
   });
+  it("Returns hash by input object", () => {
+    const trivialKey = deterministicPartitionKey({data: "hnl98tgna0mecjm1z1hs7kzsz5zoqpbu1ttpw5stkm7yngh56jz2k9pnexn26fpk7kyopvylpkgw1ulii1wwuaelt1w7sc4j82pyfa5bld0fv7uy3thfz773tgmxmah8k5q72ubz1aa13lxlkwwolp46h7v2rj25tc4d3fvy4o7xgs3s34uey6jv1zxmc4ktyqqc56vmed8vi2fyczwq6qia6gkdpsgs2dd0gklb0bzhaww4hug8mgj6lskf7quq123"});
+    expect(trivialKey).toBe("5d2039ed3b6066fd4c774b343c87163eb20a0e308292f192c9c93eff999b203e890e91e59e218b5bb1891d9d4c6ad5b6374fc5023c3e952934e87cd46a7d4dfa");
+  });
   it("Returns stringified object when partitionKey is an object", () => {
     const trivialKey = deterministicPartitionKey({partitionKey: {data: "123"}});
     expect(trivialKey).toBe("{\"data\":\"123\"}");

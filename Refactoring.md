@@ -10,4 +10,10 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-The code contains nested `if` so it can be refactored using guardian clause principle, which is to return the negative case as soon as possible. I also use the ternary operator to simplify a single `if-else` logic. I move the constant variables to the top, outside of the main function for future proof, in case we need to create a private function that also need the constant variable. I use destructure to access `partitionKey` prop, since it is used in multiple places. Lastly, I changed the name of the parameter from `event` to `input` to be more descriptive.
+After reading the code I understand that the algorithm is designed to return hashed value when then `partitionKey` prop is provided or not. So I decided to I extract the logic that retrieves value if `partitionKey` is provided into a new function and call it from the main function.
+To tidy up the codes I do the following:
+- the code contains nested `if` so it can be refactored using guardian clause principle, which is to return the negative case as soon as possible.
+- I use the ternary operator to simplify a single `if-else` logic.
+- I move the constant variables to the top, so they can be accessed by other functions inside the file.
+- I use destructure to access `partitionKey` prop, since it is used in multiple places.
+- lastly, I changed the name of the parameter from `event` to `input` to be more descriptive.
