@@ -9,3 +9,5 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+The code contains nested `if` so it can be refactored using guardian clause principle, which is to return the negative case as soon as possible. I also use the ternary operator to simplify a single `if-else` logic. I move the constant variables to the top, outside of the main function for future proof, in case we need to create a private function that also need the constant variable. I use destructure to access `partitionKey` prop, since it is used in multiple places. Lastly, I changed the name of the parameter from `event` to `input` to be more descriptive.
